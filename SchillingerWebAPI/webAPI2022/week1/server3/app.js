@@ -6,7 +6,7 @@ var fileSystem = require('fs')
 http.createServer(function(request, response)
 {
     var pathName = request.url
-    var fileName = "index.html"
+    var fileName = "week1/server3/index.html"
 
     // Load file using the filesystem
     fileSystem.readFile(fileName, callback);
@@ -24,9 +24,9 @@ http.createServer(function(request, response)
             response.writeHead(200, {"Content-type":"text/html"})
             response.write(data)
         }
+        response.end()
     }
 
-    response.end()
 }).listen(port)
 
 console.log("Running on port 3000")
